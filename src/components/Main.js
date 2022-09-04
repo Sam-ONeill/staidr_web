@@ -7,8 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 // ***** it will used in dev mode
-const socketUrl = 'http://localhost/'
-//const socketUrl = '/'
+//const socketUrl = 'http://localhost/'
+const socketUrl = '/'
 
 export class Main extends Component {
     state = {
