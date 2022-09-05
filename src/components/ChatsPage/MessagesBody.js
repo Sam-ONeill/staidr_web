@@ -7,7 +7,7 @@ export class MessagesBody extends Component {
   componentDidMount(){
     this.scrollDown()
   }
-  
+
   componentDidUpdate( a, b ){
     this.scrollDown()
   }
@@ -26,18 +26,18 @@ export class MessagesBody extends Component {
             {
               messages.length > 0 && (
                 messages.map( message => (
-                  <Card key={ message.id } fluid style={{ marginTop: '0px'}}>
+                  <Card key={ message.id } fluid style={{ marginTop: '0px',boxShadow:"none"}}>
                     <Card.Content
-                      style={{ padding: '3px 10px' }} 
+                      style={{ padding: '3px 10px',fontSize:"0.8em"}}
                       textAlign={ message.sender === user.nickname ? 'right' : 'left' }>
                       <h3>{message.message}</h3>
-                      {message.sender[0].toUpperCase() + message.sender.slice(1)} Send @ { moment(message.timef).fromNow()}
+                      {message.sender[0].toUpperCase() + message.sender.slice(1)} @ { moment(message.timef).fromNow()}
                     </Card.Content>
                   </Card>
                 ))
               )
             }
-            { 
+            {
               typingUser && typingUser.map( name => (
                 <div key={name} className="typing-user">
 									{`${name[0].toUpperCase() + name.slice(1)} is typing . . .`}
