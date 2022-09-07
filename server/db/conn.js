@@ -1,5 +1,5 @@
 const {MongoClient} = require('mongodb');
-const Db = process.env.ATLAS_URI;
+const Db = 'mongodb+srv://Admin:3l6hVrAju4s1Wu4N@cluster0.xw4pb.mongodb.net/staidr?retryWrites=true&w=majority'
 const client = new MongoClient(Db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -23,3 +23,5 @@ module.exports = {
     return _db;
   },
 };
+
+
