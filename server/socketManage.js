@@ -3,19 +3,20 @@ const methods = require('./methods')
 let users = {}
 let chatsList = ['Community','Apples', 'Pears','Oranges','Bananas','Kiwis','Peaches','Grapes','Apricots']
 let communityChat = methods.createChat({ name: 'Global' })
-let Apples = methods.createChat({name: 'Apples'})
-let Pears = methods.createChat({name:'Pears'})
-let Oranges = methods.createChat({name:'Oranges'})
-let Bananas = methods.createChat({name:'Bananas'})
-let Kiwis = methods.createChat({name:'Kiwis'})
-let Peaches = methods.createChat({name:'Peaches'})
-let Grapes = methods.createChat({name:'Grapes'})
-let Apricots = methods.createChat({name:'Apricots'})
+let Niamh = methods.createChat({name: 'Niamh'})
+let Ben = methods.createChat({name:'Ben'})
+let Dharani = methods.createChat({name:'Dharani'})
+let Cian = methods.createChat({name:'Cian'})
+let Sam = methods.createChat({name:'Sam'})
+let Mark = methods.createChat({name:'Mark'})
+let David = methods.createChat({name:'David'})
 
 
 
 
-let chats = [ communityChat,Apples, Pears,Oranges,Bananas,Kiwis,Peaches,Grapes,Apricots ]
+
+
+let chats = [ communityChat,Niamh,Ben,Dharani,Cian,Sam,Mark,David ]
 
 module.exports = io => socket => {
 

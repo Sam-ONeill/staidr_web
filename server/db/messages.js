@@ -1,7 +1,7 @@
 
 const mongoose = require("mongoose");
 const router = require('express').Router();
-const Message= require('../models/message_model');
+const Message= require('./message_model');
 mongoose.set('debug', true);
 router.get('/', async (req, res) => {
   const messages = await Message.find();

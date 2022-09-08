@@ -3,7 +3,6 @@ import io from 'socket.io-client'
 import events from '../events'
 import ChatPage from '../components/ChatsPage/ChatPage'
 import LoginPage from '../components/LoginPage/LoginPage'
-import { useAuth0 } from "@auth0/auth0-react";
 
 
 // ***** it will used in dev mode
