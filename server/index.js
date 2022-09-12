@@ -15,7 +15,7 @@ io.on('connection', socketManage )
 app.use( express.static(path.join(__dirname, '../build')))
 server.listen( PORT, () => console.log('App was start at port : ' + PORT ))
 // Connect to the MongoDb database\
-/*
+
 app.use(cors({origin: true}));
 app.use(express.json());
 mongoose
@@ -26,4 +26,4 @@ mongoose
 const Message = require('./db/message_model');
 mongo.dbOpen();
 
-*/
+

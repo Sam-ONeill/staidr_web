@@ -17,7 +17,7 @@ let David = methods.createChat({name:'David'})
 
 
 let chats = [ communityChat,Niamh,Ben,Dharani,Cian,Sam,Mark,David ]
-
+let msg =[]
 module.exports = io => socket => {
 
     socket.on( events.IS_USER, ( nickname, cb ) => {
@@ -32,7 +32,28 @@ module.exports = io => socket => {
     })
 
     socket.on( events.INIT_CHATS, cb => {
+       /* async function test () {
+            let temp = await methods.getMessages("fuck");
+            return temp;
+        }
+        console.log("we are here now " + test());
+        const msg = test().then((data) =>JSON.stringify(data)).then((mssg) =>{
+            return mssg;
+        });
+        const print=()=>{
+            msg.then((a)=>{
+                console.log(a);
+            });
+        };
+        print();
+        console.log("fuck it idc" + msg);
+
+        */
         cb(chats)
+
+        //pastChats.forEach(element => console.log(element));
+
+       // io.emit()
     })
 
     socket.on( events.LOGOUT, () => {
@@ -50,6 +71,10 @@ module.exports = io => socket => {
     socket.on( events.MESSAGE_SEND, ({ channel, msg }) => {
         let message = methods.createMessage( msg, socket.user.nickname )
         io.emit( events.MESSAGE_SEND, ({ channel, message }))
+        //console.log(channel);
+       // console.log(socket.user);
+        let DBmessage = methods.sendToDb(message, channel);
+        methods.pushToDB(DBmessage);
     })
 
     socket.on( events.TYPING, ({ channel, isTyping }) => {

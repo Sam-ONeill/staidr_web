@@ -4,7 +4,6 @@ import { Segment, Header, Icon } from 'semantic-ui-react';
 export class MessageHeader extends Component {
   render() {
     let { activeChannel } = this.props
-    console.log("messages header", JSON.stringify(activeChannel));
     return (
       <Segment>
         <Header as="h2">

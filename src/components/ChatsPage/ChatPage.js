@@ -22,6 +22,8 @@ export class ChatPage extends Component {
     socket.on( events.P_MESSAGE_SEND, this.addPMessage )
     socket.on( events.P_TYPING, this.addPTyping)
     socket.on( events.CREATE_CHANNEL, this.updateChats )
+
+
   }
 
   initChats =  _chats  => this.updateChats( _chats, true )
